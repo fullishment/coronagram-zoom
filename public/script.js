@@ -132,3 +132,10 @@ const setPlayVideo = () => {
   `
   document.querySelector('.main__video_button').innerHTML = html;
 }
+const http = require("http");
+const cron = require('node-cron');
+
+cron.schedule('*/20 23, 0-14 * * *', function(){
+  console.log('node-cron');
+  http.get("http://coronagram-zoom.herokuapp.com");
+})
